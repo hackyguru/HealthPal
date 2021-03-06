@@ -92,7 +92,7 @@ function loadOnboarding() {
 }
 
 function loadRegistration(window) {
-	window.loadURL('file://' + __dirname + '/src/views/registration.html');
+	window.loadURL('file://' + __dirname + '/src/views/dashboard.html');
 
 	ipcMain.on('registered', (event, userData) => {
 		loadBaseline(window, userData);
@@ -128,7 +128,7 @@ ipcMain.on('helper-open', (event, arg) => {
 
 app.on('ready', function () {
 	db.loadDatabase();
-	// resetOnboarding();
+	resetOnboarding();
 	db.find({
 		onboarded: true
 	}, function (err, docs) {
