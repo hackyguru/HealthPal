@@ -41,7 +41,7 @@ function loadHelper() {
 }
 
 function loadMenuBar() {
-	getUserData(function (userData) {
+	// getUserData(function (userData) {
 		var mainWindowOptions = {
 			width: 640,
 			height: 480,
@@ -72,7 +72,7 @@ function loadMenuBar() {
 			if (process.platform != 'darwin')
 				mb.quit();
 		});
-	});
+	// });
 }
 
 function loadOnboarding() {
