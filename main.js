@@ -8,21 +8,21 @@ const {
 	ipcMain
 } = require('electron');
 
-const Datastore = require('nedb');
+// const Datastore = require('nedb');
 
-const db = new Datastore({
-	filename: 'local/defaults.db'
-});
+// const db = new Datastore({
+// 	filename: 'local/defaults.db'
+// });
 
-function getUserData(completion) {
-	db.find({
-		onboarded: true
-	}, function (err, docs) {
-		if (docs.length > 0) {
-			completion(docs[0]);
-		}
-	});
-}
+// function getUserData(completion) {
+// 	db.find({
+// 		onboarded: true
+// 	}, function (err, docs) {
+// 		if (docs.length > 0) {
+// 			completion(docs[0]);
+// 		}
+// 	});
+// }
 
 function loadHelper() {
 	var mainWindow = new BrowserWindow({
@@ -92,50 +92,53 @@ function loadOnboarding() {
 }
 
 function loadRegistration(window) {
-	window.loadURL('file://' + __dirname + '/src/views/dashboard.html');
+	window.loadURL('file://' + __dirname + '/src/views/registration.html');
 
-	ipcMain.on('registered', (event, userData) => {
-		loadBaseline(window, userData);
+	ipcMain.on('Registration-cta', (event, arg) => {
+		loadBaseline(window);
 	});
+
+		
+	
 }
 
-function loadBaseline(window, userData) {
+function loadBaseline(window) {
 	window.loadURL('file://' + __dirname + '/src/views/baseline.html');
 
 	ipcMain.on('baseline-complete', (event, baseline) => {
-		userData['onboarded'] = true;
-		userData['baseline'] = baseline;
-		db.insert(userData);
+		// userData['onboarded'] = true;
+		// userData['baseline'] = baseline;
+		// db.insert(userData);
 		loadMenuBar();
 		loadHelper();
 		window.destroy();
 	});
 }
 
-function resetOnboarding() {
-	db.remove({
-		onboarded: true
-	}, {
-		multi: true
-	}, function (err, numReplaced) {
-		console.log('Deleted ', numReplaced, ' onboarding files.');
-	});
-}
+// function resetOnboarding() {
+// 	db.remove({
+// 		onboarded: true
+// 	}, {
+// 		multi: true
+// 	}, function (err, numReplaced) {
+// 		console.log('Deleted ', numReplaced, ' onboarding files.');
+// 	});
+// }
 
 ipcMain.on('helper-open', (event, arg) => {
 	loadHelper();
 });
 
 app.on('ready', function () {
-	db.loadDatabase();
-	resetOnboarding();
-	db.find({
-		onboarded: true
-	}, function (err, docs) {
-		if (docs.length > 0) {
-			loadMenuBar();
-		} else {
+	// db.loadDatabase();
+	// resetOnboarding();
+	// db.find({
+	// 	onboarded: true
+	// }, function (err, docs) {
+	// 	if (docs.length > 0) {
+	// 		loadMenuBar();
+	// 	} else {
 			loadOnboarding();
-		}
-	})
+	// 	}
+	// })
 });
