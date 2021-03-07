@@ -4,9 +4,13 @@ const {
 
 const cta = document.querySelector('#cta');
 
+
 cta.addEventListener('click', function() {
     ipcRenderer.send('Registration-cta');
 });
+
+
+
 
 // import {
 //     signUp,

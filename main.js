@@ -64,7 +64,7 @@ function loadMenuBar() {
             console.log(app.name);
             app.setAppUserModelId(app.name);
 			mb.tray.setImage('letter-20.png');
-			mb.window.webContents.send('userData', userData);
+			// mb.window.webContents.send('userData', userData);
             mb.showWindow();
 		});
 
@@ -93,6 +93,7 @@ function loadOnboarding() {
 
 function loadRegistration(window) {
 	window.loadURL('file://' + __dirname + '/src/views/registration.html');
+	// window.loadURL('http://localhost:8501');
 
 	ipcMain.on('Registration-cta', (event, arg) => {
 		loadBaseline(window);

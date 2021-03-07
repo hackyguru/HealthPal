@@ -5,20 +5,22 @@
     <title>Welcome to Healthpal</title>
     <link rel="stylesheet" href="../styles/starter.css">
     <link rel="stylesheet" href="../styles/registration.css">
+    
+
 </head>
 
 <body>
     <div class="Registration app">
         <div class="Registration-container">
-            <h1 class="Registration-title" id="title">Tell us about your BMI</h1>
-            <h2 class="Registration-subtitle" id="subtitle">calculate your BMI to analyze 
+            <h1 class="Registration-title" id="title">Configure Your Health Pal</h1>
+            <h2 class="Registration-subtitle" id="subtitle">Don't worry - we only save this info in your local machine. 
             </h2>
-            <button class="inline-button Registration-question">Why do I need to calculate BMI? "To have a clear data "</button>
+            <button class="inline-button Registration-question">Help us provide you a personalized experience.</button>
 
             <form class="Registration-form">
                 <div class="Registration-row" id="row-1">
                     <div class="Registration-inputBox">
-                        <label for="firstName">Height</label>
+                        <label >Height</label>
                         <input name="firstName" id="firstName" class="Registration-inputTextField">
                     </div>
 
@@ -30,7 +32,7 @@
 
                 <div class="Registration-row" id="row-2">
                     <div class="Registration-inputBox">
-                        <label for="email">Weight</label>
+                        <label>Weight</label>
                         <input name="email" id="email" class="Registration-inputTextField">
                     </div>
 <!-- 
@@ -39,24 +41,33 @@
                         <input name="password" id="password" type="password" class="Registration-inputTextField">
                     </div> -->
                 </div>
-
+                    <input type="text" id="sometext">
                 <div class="Registration-row" id="row-3">
                     <div class="Registration-inputBox">
                         <label for="confirmPassword">Your BMI</label>
-                        <input name="confirmPassword" id="confirmPassword" type="password"
-                            class="Registration-inputTextField">
+                        <input type="text"
+                            class="Registration-inputTextField" onfocus="bmicalc()">
                     </div>
                 </div>
 
                 <button class="cta Registration-cta" type="button" id="cta">Calcualte</button>
                 
             </form>
+            <script>
+                
+function bmicalc(){
+var height = document.getElementById("firstName").value;
+var weight = document.getElementById("email").value;
+
+console.log(height+weight);
+}
+            </script>
         </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script> -->
     <!-- <script>
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
