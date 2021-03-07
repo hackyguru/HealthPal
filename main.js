@@ -92,6 +92,8 @@ function loadOnboarding() {
 }
 
 function loadRegistration(window) {
+	
+
 	window.loadURL('file://' + __dirname + '/src/views/registration.html');
 	// window.loadURL('http://localhost:8501');
 
