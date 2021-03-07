@@ -8,6 +8,36 @@ cta.addEventListener('click', function() {
     ipcRenderer.send('Registration-cta');
 });
 
+const height = (document.getElementById('firstName').value);
+const weight = (document.getElementById('email').value);
+console.log(height+""+weight);
+const bmi = (document.getElementById('confirmPassword'));
+let cta1= document.querySelector("#cta1"); 
+  
+
+    
+   
+cta1.addEventListener("click", calculateBMI); 
+
+
+function calculateBMI(){
+    if(height===''||isNaN(height)){
+        bmi.innerHTML="Provide a valid height"
+    }
+    else if(weight===''||isNaN(weight)){
+        bmi.innerHTML="Provide a valid weight"
+    }
+    else{
+        let bmic=(weight/((height*height)/10000)).toFixed(2)
+        if(bmic<18.6){
+            bmi.innerHTML=`Under weight :<span>${bmic}</span>`
+        }else if(bmic>=18.6 && bmic <24.9){
+            bmi.innerHTML=`Normal :<span>${bmic}</span>`
+        }else{
+            bmi.innerHTML=`Over weight :<span>${bmic}</span>`
+        }
+    }
+}
 // import {
 //     signUp,
 //     logIn,
@@ -21,11 +51,7 @@ cta.addEventListener('click', function() {
 // const row1 = document.querySelector('#row-1');
 // const row3 = document.querySelector('#row-3');
 
-// const firstNameField = document.querySelector('#firstName');
-// const lastNameField = document.querySelector('#lastName');
-// const emailField = document.querySelector('#email');
-// const passwordField = document.querySelector('#password');
-// const confirmPasswordField = document.querySelector('#confirmPassword');
+
 
 // const texts = {
 //     true: {
