@@ -1,6 +1,6 @@
 .Landing-title {
     font-size: 48px;
-    color: #00BFA6;
+    color:  #0277BD;
 }
 
 .Landing-subtitle {
@@ -57,12 +57,12 @@
 }
 
 .Landing-indicatorActive {
-    background: #00BFA6;
+    background:  #0277BD;
     opacity: 1;
 }
 
 .Landing-indicator:hover {
-    background: #00BFA6;
+    background: #0277BD;
 }
 
 .Landing-arrow {

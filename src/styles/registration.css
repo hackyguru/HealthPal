@@ -7,7 +7,7 @@
 
 .Registration-title {
     font-size: 28px;
-    color: #00BFA6;
+    color:  #0277BD;
 }
 
 .Registration-subtitle {
@@ -56,7 +56,7 @@
 }
 
 .Registration-inputTextField:hover {
-    border-color: #00BFA6;
+    border-color:  #0277BD;
 }
 
 .Registration-input:last-child {

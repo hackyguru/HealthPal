@@ -1,7 +1,9 @@
 const {
     ipcRenderer
 } = require('electron');
-
+const os = require ('os');
+const username =
+ document.getElementById("display").innerHTML= os.userInfo ().username;
 const indicator1 = document.querySelector("#indicator-1");
 const indicator2 = document.querySelector("#indicator-2");
 const indicator3 = document.querySelector("#indicator-3");

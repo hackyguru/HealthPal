@@ -33,7 +33,7 @@ function loadHelper() {
 		}
 	});
 	mainWindow.maximize();
-	mainWindow.loadURL('file://' + __dirname + '/src/views/helper.html');
+	mainWindow.loadURL('file://' + __dirname + '/src/views/dashboard.html');
 
 	ipcMain.on('helper-close', (event, arg) => {
 		mainWindow.quit();

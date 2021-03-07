@@ -58,7 +58,7 @@ input:focus {
 }
 
 .cta {
-    background: #00BFA6;
+    background: #0277BD;
     border-radius: 8px;
     width: 250px;
     height: 50px;
@@ -69,11 +69,11 @@ input:focus {
 }
 
 .cta:hover {
-    background: #00A28D;
+    background:  #0277BD;
 }
 
 .inline-button {
-    color: #00BFA6;
+    color: #0277BD;
     font-weight: 600;
     opacity: 0.7;
     background: none;
@@ -81,7 +81,7 @@ input:focus {
 }
 
 .inline-button:hover {
-    color: #00A28D;
+    color:  #0277BD;
     opacity: 1;
 }
 
