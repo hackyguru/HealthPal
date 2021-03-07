@@ -33,11 +33,17 @@
                 <div class="Registration-row" id="row-2">
                     <div class="Registration-inputBox">
                         <label >Age</label>
-                        <input name="email" id="email" onfocus="bmicalc()" class="Registration-inputTextField">
+                        <input name="email" id="123" class="Registration-inputTextField">
                     </div>
 
                     <div class="Registration-inputBox">
+                        <label >BMI</label>
+                        <input name="email" id="email" onfocus="bmicalc()" class="Registration-inputTextField">
                         </div>
+                        <div class="Registration-inputBox">
+                            <label >BMI Result</label>
+                            <input name="email" id="result" class="Registration-inputTextField">
+                            </div>
                      
                 </div>
                 <label for="cars">Choose time to monitor your HB:</label>
@@ -64,11 +70,25 @@
 function bmicalc(){
 var height = document.getElementById("firstName").value;
 var weight = document.getElementById("lastName").value;
-console.log(height+weight);
-var pro = height*weight;
-document.getElementById("email").value=pro;
 
-console.log(height+weight);
+if(weight > 0 && height > 0){	
+var finalBmi = weight/(height/100*height/100)
+document.getElementById("email").value=finalBmi;
+if(finalBmi < 18.5){
+document.getElementById("result").value= "That you are too thin.";
+}
+if(finalBmi > 18.5 && finalBmi < 25){
+    document.getElementById("result").value = "That you are healthy.";
+}
+if(finalBmi > 25){
+    document.getElementById("result").value= "That you have overweight.";
+}
+}
+else{
+alert("Please Fill in everything correctly");
+}
+
+
 }
             </script>
         </div>

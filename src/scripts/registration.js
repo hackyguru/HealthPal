@@ -9,42 +9,9 @@ cta.addEventListener('click', function() {
     ipcRenderer.send('Registration-cta');
 });
 
-<<<<<<< HEAD
 
 
 
-=======
-const height = (document.getElementById('firstName').value);
-const weight = (document.getElementById('email').value);
-console.log(height+""+weight);
-const bmi = (document.getElementById('confirmPassword'));
-let cta1= document.querySelector("#cta1"); 
-  
-
-    
-   
-cta1.addEventListener("click", calculateBMI); 
-
-
-function calculateBMI(){
-    if(height===''||isNaN(height)){
-        bmi.innerHTML="Provide a valid height"
-    }
-    else if(weight===''||isNaN(weight)){
-        bmi.innerHTML="Provide a valid weight"
-    }
-    else{
-        let bmic=(weight/((height*height)/10000)).toFixed(2)
-        if(bmic<18.6){
-            bmi.innerHTML=`Under weight :<span>${bmic}</span>`
-        }else if(bmic>=18.6 && bmic <24.9){
-            bmi.innerHTML=`Normal :<span>${bmic}</span>`
-        }else{
-            bmi.innerHTML=`Over weight :<span>${bmic}</span>`
-        }
-    }
-}
->>>>>>> 3bbdbc2ad54056c5fa4fc648c25cd5a80ab82aa2
 // import {
 //     signUp,
 //     logIn,
